@@ -28,25 +28,23 @@ public class Task4 {
             System.out.println();
         }
 
-        // Введення елементу, мінор якого треба знайти
         System.out.print("\nВведіть номер рядка елемента (від 1 до " + n + "): ");
-        int r = sc.nextInt() - 1;   // -1 бо користувач вводить 1..n, а індекси 0..n-1
+        int r = sc.nextInt() - 1;   
 
         System.out.print("Введіть номер стовпця елемента (від 1 до " + n + "): ");
         int c = sc.nextInt() - 1;
 
-        // Створюємо матрицю (n-1) × (n-1) — це мінор
         int[][] minor = new int[n - 1][n - 1];
 
-        int mi = 0; // індекс рядка в мінорі
+        int mi = 0; 
         for (int i = 0; i < n; i++) {
 
-            if (i == r) continue; // пропускаємо вибраний рядок
+            if (i == r) continue;
 
-            int mj = 0; // індекс стовпця в мінорі
+            int mj = 0; 
             for (int j = 0; j < n; j++) {
 
-                if (j == c) continue; // пропускаємо вибраний стовпець
+                if (j == c) continue; 
 
                 minor[mi][mj] = arr[i][j];
                 mj++;
@@ -54,7 +52,6 @@ public class Task4 {
             mi++;
         }
 
-        // Виводимо мінор
         System.out.println("\nМінор (" + (r+1) + ", " + (c+1) + "):");
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - 1; j++) {
