@@ -11,7 +11,6 @@ public class Task2 {
         double a, b, x;
 
         if (ch == 'y') {
-            // Ручне введення
             System.out.print("Введіть значення a: ");
             a = sc.nextDouble();
             System.out.print("Введіть значення b: ");
@@ -19,7 +18,6 @@ public class Task2 {
             System.out.print("Введіть значення x: ");
             x = sc.nextDouble();
         } else {
-            // Випадкове генерування
             a = (Math.random() * ((5 - (-5)) + 1 )) + (-5) ;
             b = (Math.random() * ((5 - (-5)) + 1 )) + (-5) ;
             x = (Math.random() * ((13 - (-2)) + 1 )) + (-2) ;
@@ -30,7 +28,6 @@ public class Task2 {
 
         double f;
 
-        // Обчислення f(x)
         if (x> -2 && x <5) {
             if (a * x + 3 <= 0) {
                 System.out.println("Помилка: аргумент логарифма має бути > 0.");
