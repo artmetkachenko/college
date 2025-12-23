@@ -8,7 +8,7 @@ public class Task1 {
 
         double x = Math.pow(1 + Math.pow(Math.tan(a / 2), 2), Math.sqrt(Math.abs(b)+c ));
 
-        double y = 2 * (1/ Math.tan(a / Math.abs(b))); // ctg(x) = 1 / tan(x)
+        double y = 2 * (1/ Math.tan(a / Math.abs(b))); 
 
         System.out.println("x = " + x);
         System.out.println("y = " + y);
