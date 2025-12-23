@@ -14,7 +14,6 @@ public class Task5 {
 
         int[] arr = new int[n];
 
-        // Генерація випадкових значень (від 0 до 99)
         for(int i = 0; i < n; i++){
             arr[i] = rand.nextInt(100);
         }
@@ -28,7 +27,7 @@ public class Task5 {
 
         boolean ok = true;
 
-        if (choice == 1) { // зростання
+        if (choice == 1) { 
             for (int i = 1; i < n; i++) {
                 if (arr[i] < arr[i-1]) {
                     ok = false;
@@ -37,7 +36,7 @@ public class Task5 {
             }
             System.out.println(ok ? "Масив зростає." : "Масив НЕ зростає.");
         }
-        else if (choice == 2) { // спадання
+        else if (choice == 2) {
             for (int i = 1; i < n; i++) {
                 if (arr[i] > arr[i-1]) {
                     ok = false;
