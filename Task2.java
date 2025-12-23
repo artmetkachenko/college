@@ -1,50 +1,38 @@
-
 import java.util.Scanner;
 
 public class Task2 {
-
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        System.out.println("=== Primitive Data Types Information ===");
+        System.out.println("Введите текст (одно или несколько предложений):");
+        String text = sc.nextLine();
 
-        printTypeInfo("byte", Byte.SIZE, Byte.MIN_VALUE, Byte.MAX_VALUE);
-        printTypeInfo("short", Short.SIZE, Short.MIN_VALUE, Short.MAX_VALUE);
-        printTypeInfo("int", Integer.SIZE, Integer.MIN_VALUE, Integer.MAX_VALUE);
-        printTypeInfo("long", Long.SIZE, Long.MIN_VALUE, Long.MAX_VALUE);
-        printTypeInfo("float", Float.SIZE, Float.MIN_VALUE, Float.MAX_VALUE);
-        printTypeInfo("double", Double.SIZE, Double.MIN_VALUE, Double.MAX_VALUE);
-        printTypeInfo("char", Character.SIZE, (int) Character.MIN_VALUE, (int) Character.MAX_VALUE);
-        printTypeInfo("boolean", 1, "false", "true");
+        int count = 0;
+        int i = 0;
 
-        Scanner scanner = new Scanner(System.in);
+        while (i < text.length()) {
+            char ch = text.charAt(i);
+            if (ch == '.' || ch == '!' || ch == '?') {
+                count++;
 
-        System.out.println("\n=== Data Input Section ===");
+                int j = i + 1;
+                while (j < text.length()) {
+                    char next = text.charAt(j);
+                    if (next == '.' || next == '!' || next == '?') {
+                        j++;
+                    } else {
+                        break;
+                    }
+                }
+                i = j;
+                continue;
+            }
+            i++;
+        }
 
-        System.out.print("Enter integer (int): ");
-        int intValue = Integer.parseInt(scanner.nextLine());
-        System.out.println("You entered int: " + intValue);
+        System.out.println("Количество предложений: " + count);
 
-        System.out.print("Enter double: ");
-        double doubleValue = Double.parseDouble(scanner.nextLine());
-        System.out.println("You entered double: " + doubleValue);
-
-        System.out.print("Enter boolean (true/false): ");
-        boolean booleanValue = Boolean.parseBoolean(scanner.nextLine());
-        System.out.println("You entered boolean: " + booleanValue);
-
-        System.out.print("Enter character (char): ");
-        char charValue = scanner.nextLine().charAt(0);
-        System.out.println("You entered char: " + charValue);
-
-        scanner.close();
-    }
-
-    private static void printTypeInfo(String name, int size, Object min, Object max) {
-        System.out.println(
-                "Type: " + name +
-                ", Size: " + size + " bits" +
-                ", Min: " + min +
-                ", Max: " + max
-        );
+        sc.close();
     }
 }
+
